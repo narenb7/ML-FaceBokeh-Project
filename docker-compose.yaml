@@ -23,7 +23,4 @@ services:
     ports:
       - "8000:8000"
     command:
-      [
-        "tritonserver",
-        "--model-repository=s3://triton-repository/models/"
-      ]
+      ["tritonserver", "--model-repository=s3://narenb-s3/models/"]
