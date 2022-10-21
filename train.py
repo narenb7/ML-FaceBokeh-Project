@@ -27,7 +27,7 @@ target_img_paths = sorted([
 ])
 
 # Free up RAM in case the model definition cells were run multiple times
-tf.keras.backend.clear_session()
+keras.backend.clear_session()
 
 # Build model
 model = get_model(img_size, num_classes)
