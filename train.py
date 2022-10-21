@@ -58,9 +58,6 @@ model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
     save_best_only=True)
 
 
-model.fit(dataset, epochs=10, callbacks=my_callbacks)
-
-
 # Train the model, doing validation at the end of each epoch.
 # Make sure to include the calllback for mlflow
 epochs = 15
