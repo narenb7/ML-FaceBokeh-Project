@@ -12,8 +12,8 @@ mlflow.autolog(log_models=True)
 
 #with mlflow.start_run():
 
-input_dir = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/data/images'
-target_dir = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/data/annotations/trimaps'
+input_dir = './data/images'
+target_dir = './data/annotations/trimaps'
 img_size = (160, 160)
 num_classes = 3
 batch_size = 32
@@ -50,7 +50,7 @@ model.compile(optimizer="rmsprop", loss="sparse_categorical_crossentropy")
 # Set the keras callback using ModelCheckpoint to save the best results of the model
 
 checkpoint_filepath = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/tmp'
-model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
     filepath=checkpoint_filepath,
     save_weights_only=True,
     monitor='val_accuracy',
