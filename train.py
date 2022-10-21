@@ -8,10 +8,12 @@ import mlflow
 import mlflow.keras
 
 # Add mlflow logging
+mlflow.autolog(log_models=true)
 
+#with mlflow.start_run():
 
-input_dir =
-target_dir =
+input_dir = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/data/images'
+target_dir = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/data/annotations/trimaps'
 img_size = (160, 160)
 num_classes = 3
 batch_size = 32
@@ -25,7 +27,7 @@ target_img_paths = sorted([
 ])
 
 # Free up RAM in case the model definition cells were run multiple times
-
+tf.keras.backend.clear_session()
 
 # Build model
 model = get_model(img_size, num_classes)
@@ -46,7 +48,18 @@ val_gen = OxfordPets(batch_size, img_size, val_input_img_paths, val_target_img_p
 model.compile(optimizer="rmsprop", loss="sparse_categorical_crossentropy")
 
 # Set the keras callback using ModelCheckpoint to save the best results of the model
-callbacks =
+
+checkpoint_filepath = '/home/ec2-user/Git_Repo/nbml6-face-bokeh/tmp'
+model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath=checkpoint_filepath,
+    save_weights_only=True,
+    monitor='val_accuracy',
+    mode='max',
+    save_best_only=True)
+
+
+model.fit(dataset, epochs=10, callbacks=my_callbacks)
+
 
 # Train the model, doing validation at the end of each epoch.
 # Make sure to include the calllback for mlflow
