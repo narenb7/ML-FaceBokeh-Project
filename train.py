@@ -8,7 +8,7 @@ import mlflow
 import mlflow.keras
 
 # Add mlflow logging
-mlflow.autolog(log_models=true)
+mlflow.autolog(log_models=True)
 
 #with mlflow.start_run():
 
