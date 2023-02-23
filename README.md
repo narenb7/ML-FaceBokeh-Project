@@ -1,10 +1,5 @@
-<p align = "center" draggable=”false”
-   ><img src="https://user-images.githubusercontent.com/37101144/161836199-fdb0219d-0361-4988-bf26-48b0fad160a3.png"
-     width="200px"
-     height="auto"/>
-</p>
 
-# <h1 align="center" id="heading">Week 6 - Deploying Face Emotion on Nvidia Triton Server with MLFlow</h1>
+# <h1 align="center" id="heading">Deploying Face Emotion on Nvidia Triton Server with MLFlow</h1>
 
 ## 📚 Learning Objectives
 
