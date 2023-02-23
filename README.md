@@ -8,11 +8,6 @@ By the end of this session, you will be able to:
 - Train and Deploy a Model using AWS EC2 GPU instance
 - Track Experiments within ML Flow
 
-## 📦 Deliverables
-
-- A screenshot of your ML Flow UI with your experiments
-- A screenshot of <http://ec2.ip.address:8000/docs>
-
 # Deployment on EC2
 
 ## Create EC2 Instance
